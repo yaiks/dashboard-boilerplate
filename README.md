@@ -19,3 +19,9 @@ For testing:
 - Powered by **GraphQL**
 - [Relay](https://relay.dev/en/) or [Apollo](https://www.apollographql.com/)?
 - [XState](https://github.com/davidkpiano/xstate)
+
+## TODOS
+
+- Create main component for mailbox route
+- Add routes and subroutes
+- Create Card component

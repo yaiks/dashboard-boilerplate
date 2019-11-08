@@ -1,6 +1,17 @@
 import React from "react";
 import { ChevronDown, Bell, HelpCircle, Search } from "react-feather";
 
+const HeaderItem: React.FC<{ title: string }> = ({ title }) => (
+	<a
+		href=''
+		className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'
+	>
+		{title}
+	</a>
+);
+
+const items = ["Mailbox", "Customers", "Reporting", "Manage"];
+
 const Header: React.FC<{}> = () => (
 	<header className='flex flex-shrink-0'>
 		<div className='w-64 flex-shrink-0 px-4 py-3 bg-gray-800'>
@@ -18,30 +29,9 @@ const Header: React.FC<{}> = () => (
 		</div>
 		<div className='flex-1 flex items-center justify-between px-6 bg-gray-700'>
 			<nav className='flex'>
-				<a
-					href=''
-					className='inline-block ml-2 hover:bg-gray-600 px-3 bg-gray-800 py-2 rounded-lg leading-none text-sm font-medium text-white'
-				>
-					Mailbox
-				</a>
-				<a
-					href=''
-					className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'
-				>
-					Customers
-				</a>
-				<a
-					href=''
-					className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'
-				>
-					Reporting
-				</a>
-				<a
-					href=''
-					className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'
-				>
-					Manage
-				</a>
+				{items.map(item => (
+					<HeaderItem key={item} title={item} />
+				))}
 			</nav>
 			<div className='flex items-center'>
 				<div className='relative'>

@@ -19,7 +19,7 @@ const SidebarItem: React.FC<{ title: string; icon: React.ComponentType }> = ({
 }) => (
 	<a
 		href='#'
-		className='mt-2 -mx-3 px-3 py-2 flex items-center justify-between text-xs font-medium hover:bg-gray-200 rounded-lg'
+		className='mt-1 -mx-3 px-3 py-2 flex items-center justify-between text-xs font-medium hover:bg-gray-200 rounded-lg'
 	>
 		<div className='inline-flex items-center'>
 			<Icon icon={icon} />
