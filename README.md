@@ -17,5 +17,5 @@ For testing:
 ## Backlog
 
 - Powered by **GraphQL**
-- [Relay](https://relay.dev/en/)
+- [Relay](https://relay.dev/en/) or [Apollo](https://www.apollographql.com/)?
 - [XState](https://github.com/davidkpiano/xstate)
