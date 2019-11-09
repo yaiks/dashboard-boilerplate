@@ -1,16 +1,15 @@
-import React from "react";
+import Link from "next/link";
 import { ChevronDown, Bell, HelpCircle, Search } from "react-feather";
 
-const HeaderItem: React.FC<{ title: string }> = ({ title }) => (
-	<a
-		href=''
-		className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'
-	>
-		{title}
-	</a>
+const HeaderItem: React.FC<{ route: string }> = ({ route }) => (
+	<Link href={route}>
+		<a className='inline-block ml-2 hover:bg-gray-600 px-3 py-2 rounded-lg leading-none text-sm font-medium text-white'>
+			{route}
+		</a>
+	</Link>
 );
 
-const items = ["Mailbox", "Customers", "Reporting", "Manage"];
+const routes = ["mailbox", "customers", "reporting", "manage"];
 
 const Header: React.FC<{}> = () => (
 	<header className='flex flex-shrink-0'>
@@ -29,8 +28,8 @@ const Header: React.FC<{}> = () => (
 		</div>
 		<div className='flex-1 flex items-center justify-between px-6 bg-gray-700'>
 			<nav className='flex'>
-				{items.map(item => (
-					<HeaderItem key={item} title={item} />
+				{routes.map(route => (
+					<HeaderItem key={route} route={route} />
 				))}
 			</nav>
 			<div className='flex items-center'>

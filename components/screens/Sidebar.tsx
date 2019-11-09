@@ -1,15 +1,6 @@
-import React from "react";
-import { Home, Mail, Map, List, Monitor } from "react-feather";
+import Link from "next/link";
 
 import Icon from "../bricks/Icon";
-
-const icons = [
-	{ title: "Home", icon: Home },
-	{ title: "Mail", icon: Mail },
-	{ title: "Map", icon: Map },
-	{ title: "List", icon: List },
-	{ title: "Monitor", icon: Monitor }
-];
 
 const items = ["Refunds", "Discounts", "Bugs"];
 
@@ -17,18 +8,19 @@ const SidebarItem: React.FC<{ title: string; icon: React.ComponentType }> = ({
 	title,
 	icon
 }) => (
-	<a
-		href='#'
-		className='mt-1 -mx-3 px-3 py-2 flex items-center justify-between text-xs font-medium hover:bg-gray-200 rounded-lg'
-	>
-		<div className='inline-flex items-center'>
-			<Icon icon={icon} />
-			<span className='ml-2 text-xs font-semibold text-gray-900'>{title}</span>
-		</div>
-		<span className='inline-block w-10 text-center py-1 leading-none text-xs font-semibold bg-gray-300 rounded-full text-gray-700'>
-			6
-		</span>
-	</a>
+	<Link href='#'>
+		<a className='mt-1 -mx-3 px-3 py-2 flex items-center justify-between text-xs font-medium hover:bg-gray-200 rounded-lg'>
+			<div className='inline-flex items-center'>
+				<Icon icon={icon} />
+				<span className='ml-2 text-xs font-semibold text-gray-900'>
+					{title}
+				</span>
+			</div>
+			<span className='inline-block w-10 text-center py-1 leading-none text-xs font-semibold bg-gray-300 rounded-full text-gray-700'>
+				6
+			</span>
+		</a>
+	</Link>
 );
 
 const BottomItem: React.FC<{ title: string; index: number }> = ({
@@ -45,7 +37,14 @@ const BottomItem: React.FC<{ title: string; index: number }> = ({
 	</a>
 );
 
-const Sidebar: React.FC<{}> = () => (
+type SidebarProps = {
+	icons: {
+		title: string;
+		icon: React.ComponentType;
+	}[];
+};
+
+const Sidebar: React.FC<SidebarProps> = ({ icons }) => (
 	<article className='w-64 p-6 bg-gray-100'>
 		<nav className=''>
 			<h2 className='text-xs font-semibold text-gray-600 uppercase tracking-wide'>
