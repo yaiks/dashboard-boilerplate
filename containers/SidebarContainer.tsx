@@ -4,54 +4,54 @@ import { Home, Mail, Map, List, Monitor } from "react-feather";
 import Sidebar from "../components/screens/Sidebar";
 
 function getIcons(
-	pathname: string
-): { title: string; icon: React.ComponentType }[] {
-	const icons = {
-		"/customers": function() {
-			return [
-				{ title: "Mail", icon: Mail },
-				{ title: "Mail", icon: Mail },
-				{ title: "Mail", icon: Mail },
-				{ title: "Mail", icon: Mail },
-				{ title: "Mail", icon: Mail }
-			];
-		},
-		"/reporting": function() {
-			return [
-				{ title: "Map", icon: Map },
-				{ title: "Map", icon: Map },
-				{ title: "Map", icon: Map },
-				{ title: "Map", icon: Map },
-				{ title: "Map", icon: Map }
-			];
-		},
-		"/manage": function() {
-			return [
-				{ title: "Monitor", icon: Monitor },
-				{ title: "Monitor", icon: Monitor },
-				{ title: "Monitor", icon: Monitor },
-				{ title: "Monitor", icon: Monitor },
-				{ title: "Monitor", icon: Monitor }
-			];
-		},
-		default: function() {
-			return [
-				{ title: "Home", icon: Home },
-				{ title: "Home", icon: Home },
-				{ title: "Home", icon: Home },
-				{ title: "Home", icon: Home },
-				{ title: "Home", icon: Home }
-			];
-		}
-	};
-	return (icons[pathname.toString()] || icons["default"])();
+  pathname: string
+): { subpath: string; icon: React.ComponentType }[] {
+  const icons = {
+    "/customers": function() {
+      return [
+        { subpath: "f", icon: Mail },
+        { subpath: "g", icon: Mail },
+        { subpath: "h", icon: Mail },
+        { subpath: "i", icon: Mail },
+        { subpath: "j", icon: Mail }
+      ];
+    },
+    "/reporting": function() {
+      return [
+        { subpath: "k", icon: Map },
+        { subpath: "l", icon: Map },
+        { subpath: "m", icon: Map },
+        { subpath: "n", icon: Map },
+        { subpath: "o", icon: Map }
+      ];
+    },
+    "/manage": function() {
+      return [
+        { subpath: "p", icon: Monitor },
+        { subpath: "q", icon: Monitor },
+        { subpath: "r", icon: Monitor },
+        { subpath: "s", icon: Monitor },
+        { subpath: "t", icon: Monitor }
+      ];
+    },
+    "/": function() {
+      return [
+        { subpath: "a", icon: Home },
+        { subpath: "b", icon: Home },
+        { subpath: "c", icon: Home },
+        { subpath: "d", icon: Home },
+        { subpath: "e", icon: Home }
+      ];
+    }
+  };
+  return (icons[pathname.toString()] || icons["/"])();
 }
 
 const SidebarContainer: React.FC<{}> = () => {
-	const { pathname } = useRouter();
-	const myIcons = getIcons(pathname);
+  const { pathname, query } = useRouter();
+  const myIcons = getIcons(pathname);
 
-	return <Sidebar icons={myIcons} />;
+  return <Sidebar icons={myIcons} pathname={pathname} />;
 };
 
 export default SidebarContainer;
