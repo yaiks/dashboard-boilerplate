@@ -10,7 +10,10 @@ const SidebarItem: React.FC<{
   pathname: string;
 }> = ({ subpath, icon, pathname }) => {
   return (
-    <Link href={`${pathname}?item=${subpath}`} as={`${pathname}/${subpath}`}>
+    <Link
+      href={`${pathname}?item=${subpath}`}
+      as={`${pathname === "/" ? subpath : `${pathname}/${subpath}`}`}
+    >
       <a className="mt-1 -mx-3 px-3 py-2 flex items-center justify-between text-xs font-medium hover:bg-gray-200 rounded-lg">
         <div className="inline-flex items-center">
           <Icon icon={icon} />

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Home, Mail, Map, List, Monitor } from "react-feather";
+import { Home, Mail, Map, Monitor } from "react-feather";
 
 import Sidebar from "../components/screens/Sidebar";
 
@@ -48,7 +48,7 @@ function getIcons(
 }
 
 const SidebarContainer: React.FC<{}> = () => {
-  const { pathname, query } = useRouter();
+  const { pathname } = useRouter();
   const myIcons = getIcons(pathname);
 
   return <Sidebar icons={myIcons} pathname={pathname} />;

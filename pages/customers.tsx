@@ -1,18 +1,19 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
-import Dashboard from "../../layouts/Dashboard";
+import Dashboard from "../layouts/Dashboard";
 
-const Home: NextPage<{}> = () => {
+const Customers: NextPage<{}> = () => {
   const router = useRouter();
   const { item } = router.query;
+  console.log("item", item);
 
   return (
     <Dashboard>
-      <div>Mailbox: {item}</div>
+      <div>Customers</div>
       <div></div>
     </Dashboard>
   );
 };
 
-export default Home;
+export default Customers;

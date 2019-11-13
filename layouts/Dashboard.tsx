@@ -7,7 +7,7 @@ const Dashboard: React.FC<{}> = ({ children }) => {
       <Header />
       <div className="flex-1 flex">
         <SidebarContainer />
-        <main className="bg-gray-200">{children}</main>
+        <main className="flex flex-1 p-3 bg-gray-200">{children}</main>
       </div>
     </div>
   );

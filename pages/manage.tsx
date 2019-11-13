@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import Dashboard from "../../layouts/Dashboard";
+import Dashboard from "../layouts/Dashboard";
 
 const Manage: NextPage<{}> = () => {
   return (
